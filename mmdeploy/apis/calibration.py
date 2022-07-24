@@ -62,7 +62,9 @@ def create_calib_input_data(calib_file: str,
         dataset = task_processor.build_dataset(dataset_cfg, dataset_type)
 
         # patch model
-        backend = get_backend(deploy_cfg)
+        # backend = get_backend(deploy_cfg)
+        # modify by lzj 提了官方issue，被确认为bug，给的临时修复方法
+        backend = get_backend(deploy_cfg).value
         ir = IR.get(get_ir_config(deploy_cfg)['type'])
         patched_model = patch_model(
             model, cfg=deploy_cfg, backend=backend, ir=ir)
