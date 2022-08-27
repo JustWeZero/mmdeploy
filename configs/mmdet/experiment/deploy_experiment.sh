@@ -14,7 +14,7 @@ python ./tools/deploy.py \
     ../data/VisDrone2019/VisDrone2019-DET-test-dev/images/0000006_00159_d_0000001.jpg \
     --test-img data/VisDrone2019/VisDrone2019-DET-test-dev/images/0000006_00611_d_0000002.jpg \
     --work-dir ../VisDrone_cache/deployment/${CONFIG}/slice_640x640_lr${LR}_1x_${GPU}g \
-    --calib-dataset-cfg ../configs2/VisDrone/dataset/VisDrone_detection_640x640_overlap40_singletest.py \
+    --calib-dataset-cfg ../mmdetection/configs2/VisDrone/dataset/VisDrone_detection_640x640_overlap40_singletest.py \
     --device cuda:0 \
     --log-level INFO \
     --show \
