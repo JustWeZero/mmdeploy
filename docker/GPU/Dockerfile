@@ -88,7 +88,7 @@ RUN cd /root/workspace/mmdeploy &&\
         -DMMDEPLOY_TARGET_BACKENDS="ort;trt" \
         -DMMDEPLOY_CODEBASES=all &&\
     make -j$(nproc) && make install &&\
-    cd install/example  && mkdir -p build && cd build &&\
+    cd install/example/cpp && mkdir -p build && cd build &&\
     cmake -DMMDeploy_DIR=/root/workspace/mmdeploy/build/install/lib/cmake/MMDeploy .. &&\
     make -j$(nproc) && export SPDLOG_LEVEL=warn &&\
     if [ -z ${VERSION} ] ; then echo "Built MMDeploy master for GPU devices successfully!" ; else echo "Built MMDeploy version v${VERSION} for GPU devices successfully!" ; fi
